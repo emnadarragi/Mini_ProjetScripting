@@ -18,7 +18,7 @@ do
 8/  Afficher le nom des fichers, les droits d'accès et leurs proprietaire d'un dossier passé en argument.
 9/  Afficher les droits d'accès, le proprietaire et le groupe d'un ficher passé en argument.
 10/ Afficher les utilisateurs qui ont le droit d’écriture d'un fichier passé en argument.
-11/  quit
+11/  Quitter
 -----------------------------------------------------------------------------------------------
 "
 
@@ -33,16 +33,20 @@ echo -e " "
 echo "Nombre de fihciers : "
 AfficheNbF
 ;;
-    2 ) ;;
-3 ) ;;
+2 )TypeFIle ;;
+3 ) TypeFile;;
 4 ) HELP;;
 5 ) Menu_Graph
 ;;
 6 ) ;;
-7 ) ;;
-8 ) ;;
-9 ) ;;
-10 )  ;;
+7 );;
+8 )AccessFiles
+echo -e " "
+PropFiles ;;
+9 )AccessFile
+echo -e " "
+PropFile ;;
+10 ) Ecriture ;;
 * ) echo "Choix invalid"
    esac
 fi
@@ -136,7 +140,7 @@ echo `cat HELP.txt`
 
 function TypeFile()
 {
-  cd ~;
+  cd ~/Desktop;
  file --mime-type ${OPTARG}
 }
 
@@ -158,7 +162,7 @@ function PropFile() {
    if [[ $(find $OPTARG -perm /u+x) ]]; then
      ls -l ${OPTARG} | awk '{print "Utilisateurs : "  $3}'
   else
-    echo "auccun utilisateur a le droit d'ecriture de ce fichier"
+    echo "auccun utilisateur n'a le droit d'ecriture de ce fichier"
   fi
  }
 
@@ -203,9 +207,9 @@ sed -r "s/:[ ]*/\n/" ~/Desktop/HELP.txt |\
             --text-info =$"content" &
 
     # Auteurs tab
-sed -r "s/:[ ]*/\n/"  /etc/os-release |\
-        yad --plug=$KEY --tabnum=4 --image=help --text=$" Authors : Letaief Sahar + Bader Semah \n Version :" \
-            --text-info =$"content" &
+
+        yad --plug=$KEY --tabnum=4 --image=help --text=$" Authors : Alaa Eddine Belgacem et Emna Darragi \n Version : 1.0" &
+
 
 
     # main dialog
@@ -233,7 +237,7 @@ HELP
 show_usage ;
 if [ $# -gt 0 ]; then
 
-while getopts "hT:t:AaN:n:gms:E:" var
+while getopts "hT:t:Aa:N:n:gm:s:E:" var
 do
 case $var in
 h)HELP
