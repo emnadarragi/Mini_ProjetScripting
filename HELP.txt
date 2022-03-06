@@ -1,0 +1,16 @@
+• -h: Pour afficher le help détaillé à partir d’un fichier texte.
+• -g: Pour afficher un menu textuel et gérer les fonctionnalité de façon
+graphique(Utilisation de YAD).
+• -v: Pour afficher le nom des auteurs et version du code.
+• -m: Pour afficher un menu textuel.
+• -N: Pour afficher le nombre des fichiers et dossiers d'un dossier passé en argument.
+• -T: Pour afficher le Type des fichiers d'un dossier passé en argument.
+• -t: Pour afficher le Type d'un fichiers passé comme argument.
+• -A: Pour afficher le nom des fichers, les droits d'accès et leurs proprietaire
+d'un dossier passé comme argument.
+• -a: Pour afficher les droits d'accès, le proprietaire et le groupe d'un ficher passé en argument.
+• -E:Pour afficher les utilisateurs qui ont le droit d’écriture d'un fichier passé
+comme argument.
+• -s: Pour afficher des statistiques sur le nombre des fichiers et
+dossiers dans un dossier passé comme argument.
+
